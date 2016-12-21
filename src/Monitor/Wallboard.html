@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="styles/site.css" />
+    <title>Wall Board</title>
+</head>
+<body>
+	<div id="display">
+		<ul class="projects"></ul>
+	</div>
+	
+	<script id="projectsTemplate" type="text/x-jquery-tmpl">
+		<li class="project ${status()}">
+			<span class="name">name: ${name}</span><br />
+			<span class="lastBuildTime">last build time: ${lastBuildTime()}</span><br />
+			<!--<span class="nextBuildTime">next build time: ${nextBuildTime()}</span><br />-->
+			Pipelines:
+			<ol class="pipelines">
+			{{each entries}}
+				<li class="pipeline">
+					<span class="name">${name}</span><br />
+					<span class="activity">${activity}</span><br />
+					<span class="lastBuildStatus">${lastBuildStatus}</span><br />
+					<span class="lastBuildLabel">${lastBuildLabel}</span><br />
+					<span class="lastBuildTime">${lastBuildTime}</span><br />
+					<!--<span class="nextBuildTime">${nextBuildTime}</span><br />-->
+					<span class="webUrl">${webUrl}</span><br />
+					<ol class="tasks">
+					{{each tasks}}
+						<li class="task">
+							<span class="name">${name}</span><br />
+							<span class="activity">${activity}</span><br />
+							<span class="lastBuildStatus">${lastBuildStatus}</span><br />
+							<span class="lastBuildLabel">${lastBuildLabel}</span><br />
+							<span class="lastBuildTime">${lastBuildTime}</span><br />
+							<!--<span class="nextBuildTime">${nextBuildTime}</span><br />-->
+							<span class="webUrl">${webUrl}</span><br />
+						</li>
+					{{/each}}
+					</ol>
+				</li>
+			{{/each}}
+			</ol>
+		</li>
+	</script>
+    <script src="scripts/jquery-latest.min.js"></script>
+    <script src="scripts/jquery.tmpl.min.js"></script>
+	<script src="scripts/lib.js"></script>
+	<script src="scripts/models.js"></script>
+	<script src="scripts/controller.js"></script>
+</body>
+</html>

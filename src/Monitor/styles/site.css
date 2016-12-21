@@ -1,0 +1,51 @@
+/* structural */
+#display {}
+.projects { 
+	list-style-type: none; 
+	webkit-column-count: 5;
+	moz-column-count: 5;
+	column-count: 5;
+}
+.project { 
+	border: black solid .1em;
+	width: 20em;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.project.successful {
+	height: 4em;
+	background-color: green;
+	color: white;
+}
+
+.project.building {
+	height: 4em;
+	background-color: yellow;
+	color: black;
+}
+
+.project.failed {
+	height: 8.4em;
+	background-color: red;
+	color: white;
+}
+
+.project.successful>.pipelines,.project.building>.pipelines {
+	display: none;
+}
+
+.pipelines { list-style-type: none; }
+.pipeline {}
+.tasks { list-style-type: none; }
+.task {}
+
+/* elements */
+.name {}
+.activity {}
+.lastBuildStatus {}
+.lastBuildLabel {}
+.lastBuildTime {}
+.nextBuildTime {}
+.webUrl {}
+
